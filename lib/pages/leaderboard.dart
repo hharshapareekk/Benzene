@@ -26,40 +26,53 @@ class _LeaderBoardPageState extends State<LeaderBoardPage> {
           Text('This is your leaderboard page'),
         ],
       ),
-      bottomNavigationBar: BottomAppBar(
+     bottomNavigationBar: BottomAppBar(
           color: Color.fromARGB(31, 175, 159, 214),
           child: Row(
             children: [
-              IconButton(
-                icon: Icon(Icons.house),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(20.0,5.0, 20.0, 5.0),
+                child: IconButton(
+                  icon: Icon(Icons.house, size: 40.0,color: Colors.white),
+                  onPressed: ()
+                  {
+                    Navigator.pop(context);
+                   Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen()));
+              
+                  },
+                  ),
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(20.0,5.0, 20.0, 5.0),
+                child: IconButton(
+                  icon: Icon(Icons.shield,size: 40.0,color: Colors.white),
+                  onPressed: ()
+                  {
+                    Navigator.pop(context);
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => LeaderBoardPage()));
+                  },
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(20.0,5.0, 20.0, 5.0),
+                child: IconButton(
+                    icon: Icon(Icons.girl_rounded,size: 40.0,color: Colors.white),
+                    onPressed: () {
+                      Navigator.pop(context);
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => profilePage()));
+                    }),
+              ),
+              Padding(
+               padding: const EdgeInsets.fromLTRB(20.0,5.0, 20.0, 5.0),
+                child: IconButton(
+                icon: Icon(Icons.notification_important,size: 40.0,color: Colors.white),
                 onPressed: ()
                 {
                   Navigator.pop(context);
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => HomeScreen()));
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => NotificationsPage()));
                 },
                 ),
-              IconButton(
-                icon: Icon(Icons.shield),
-                onPressed: ()
-                {
-                  Navigator.pop(context);
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => LeaderBoardPage()));
-                },
-              ),
-              IconButton(
-                  icon: Icon(Icons.girl_rounded),
-                  onPressed: () {
-                    Navigator.pop(context);
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => profilePage()));
-                  }),
-              IconButton(
-              icon: Icon(Icons.notification_important),
-              onPressed: ()
-              {
-                Navigator.pop(context);
-                Navigator.push(context, MaterialPageRoute(builder: (context) => NotificationsPage()));
-              },
               ),
             ],
           )),
