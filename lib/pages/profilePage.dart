@@ -3,6 +3,7 @@ import 'package:benzene_/pages/leaderboard.dart';
 import 'package:benzene_/pages/notifications.dart';
 import 'package:flutter/material.dart';
 
+
 class profilePage extends StatefulWidget {
   const profilePage({super.key});
 
